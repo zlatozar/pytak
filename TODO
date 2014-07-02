@@ -1,0 +1,12 @@
+PyTak TODO list
+===============
+
+- Implement OAuth using http://github.com/litl/rauth
+- Better way to write predicates
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Implement perf runner
+- Implement parallel runner
+- Document it in readthedocs.org
+- PyTak for stress tests? Think how!

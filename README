@@ -1,0 +1,90 @@
+            // PyTak //
+
+    REST API development and testing, one drop at a time
+
+    ~ Can I use it right now?
+
+      It is stable! Keep in mind that it is under havy development!
+
+    ~ What is PyTak?
+
+      PyTak is a Python framework to orchestrate calls to REST API.
+
+      As side effect it is a convenient way to document your APIs,
+      test returned JSON against JSONSchema, measure response times and
+      help developers during codding phase. One day it will be applicable for
+      stress tests.
+
+    ~ Is it ready?
+
+      Please read TODO list.
+
+    ~ What do I need?
+
+      See requirements.txt
+
+    ~ Where are the docs?
+
+      Not ready yet. Please read the code.
+
+    ~ How to start coding?
+
+      Needs pip and python
+
+      $ cd <path to PyTak>
+      $ sudo -E pip install -r requirements-env.txt
+
+      Edit .bashrc or .bash_profile in Mac
+
+      $ echo 'export WORKON_HOME=~/Envs' >> $HOME/.bashrc
+      $ source $HOME/.bashrc
+
+      $ mkdir -p $HOME/$WORKON_HOME
+      $ echo '. /usr/bin/virtualenvwrapper.sh' >> $HOME/.bashrc
+      $ source $HOME/.bashrc
+
+      Create virtual environment
+
+      $ mkvirtualenv pytak --python=python2.7
+      $ workon pytak
+      $ pip install -r requirements-dev.txt
+      $ make
+
+    ~ How to build it?
+
+      $ make
+
+    ~ How to start writing scenarios and apispecs?
+
+      $ git clone https://github.com/zlatozar/pytak
+      $ cd pytak
+      $ sudo pip install -r requirements.txt
+      $ python setup.py install
+
+      $ pytak-project -n <project name> -d <new project destination>
+
+    ~ How to start coding on CentOS 6.x?
+
+      $ sudo -E ./scripts/centos_python_env_setup.sh
+
+      After finish script will tell you next steps
+
+    ~ Do we have Python codding style?
+
+      Read STYLE
+
+    ~ Where are the tests?
+
+      Good that you're asking.
+
+        $ make test
+
+      If you just want one particular testcase to run you can
+      provide it on the command line:
+
+        $ py.test -v <your test>
+
+    ~ Where can I get help?
+
+      1. Read code
+      2. Write to zlatozar@gmail.com

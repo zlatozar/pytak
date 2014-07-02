@@ -1,0 +1,9 @@
+Sphinx
+httplib2
+requests
+oauth2
+pytest
+pexpect
+jsonschema
+texttable
+colorama
