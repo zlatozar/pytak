@@ -69,7 +69,7 @@ setup_dict = dict(
 
     entry_points={
         'console_scripts': [
-            'pytak-conf = pytak.main:project',
+            'pytak-project = pytak.main:project',
             'pytak-run = pytak.main:run'
         ]
     }
