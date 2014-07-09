@@ -146,7 +146,7 @@ class select(object):
     def then_key(self, id):
         log.info("Have to select: %s" % id)
 
-        self.regex = re.sub('\*', '(\d)+', id)
+        self.regex = re.sub('\*', '([0-9]+)', id)
         log.info("RegEx is: %s" % self.regex)
 
         matched_keys = []
@@ -175,9 +175,9 @@ class select(object):
                             matched_keys.append(value)
 
                         else:
-                            log.info("Skip '%s' because predicate returns: False" % value)
+                            log.debug("Skip '%s' because predicate returns: False" % value)
 
-        log.info(matched_keys)
+        log.info("Selected are: %s" % matched_keys)
         return matched_keys
 
     def iff(self, *predicate_func):
