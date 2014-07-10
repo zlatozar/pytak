@@ -160,6 +160,11 @@ class select(object):
                     any = True
 
                     if match:
+                        # Here is the idea: We connect two keys using first index.
+                        #
+                        # For example:
+                        # We check value of key 'entry.15.data.createDate' with predicate,
+                        # if succeeds we select value of 'entry.15.data.id'. Both have index 15.
 
                         # all
                         if self.all_predicates:
