@@ -3,6 +3,7 @@ PyTak TODO list
 
 - Implement OAuth using http://github.com/litl/rauth
 - Better way to write predicates
+- Finish JSON Schema validation
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
