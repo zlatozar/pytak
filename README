@@ -31,8 +31,8 @@
 
       Needs pip and python
 
-      $ cd <path to PyTak>
-      $ sudo -E pip install -r requirements-env.txt
+      $ git clone https://github.com/zlatozar/pytak
+      $ cd pytak
 
       Edit .bashrc or .bash_profile in Mac
 
@@ -68,6 +68,12 @@
       $ sudo -E ./scripts/centos_python_env_setup.sh
 
       After finish script will tell you next steps
+
+    ~ How to use it from Docker?
+
+      $ git clone https://github.com/zlatozar/pytak
+      $ cd pytak
+      $ sudo docker build -t pytak .
 
     ~ Do we have Python codding style?
 
