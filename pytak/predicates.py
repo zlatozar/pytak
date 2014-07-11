@@ -16,7 +16,7 @@ import logging
 log = logging.getLogger(__name__)
 
 # ___________________________________________________________
-#                                                      Hours
+#                                                       Time
 
 # Before period
 def created_before_delta(id_reg, days_before=0, hours_before=0, min_before=0, sec_before=0):
@@ -177,5 +177,14 @@ def __extract_value(clazz, id_reg, idx):
     return clazz[__replace_star(id_reg, idx)]
 
 def __replace_star(id_reg, idx):
-    """Replace stars in id_reg with an index value"""
-    return id_reg.replace('*', idx)
+    """Replace every star in id_reg with the corresponding idx list
+
+    Args:
+      id_reg (str): String with '*' instead of index
+      idx (list): List of indexes/digits that should replace '*'
+    """
+    incr = id_reg
+    for i in idx:
+        incr = incr.replace('*', i, 1)
+
+    return incr

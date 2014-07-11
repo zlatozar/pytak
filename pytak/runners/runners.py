@@ -131,7 +131,7 @@ def parallel(scenario):
     return {}
 
 # ___________________________________________________________
-#                                                   Selector
+#                                                  Selectors
 
 class select(object):
 
@@ -143,7 +143,13 @@ class select(object):
         self.all_predicates = []
         self.any_predicates = []
 
+    def then_bulk(self, id):
+        # regex =re.compile("\\bentry\\b\.[0-9]+\.\\bdata\\b\..*")
+        pass
+
     def then_key(self, id):
+        """Select values that which key matches id pattern"""
+
         log.info("Have to select: %s" % id)
 
         self.regex = re.sub('\*', '([0-9]+)', id)
@@ -153,7 +159,7 @@ class select(object):
         for a_class in self.env:
             if a_class['class'] == self.clazz:
                 for key, value in a_class.iteritems():
-                    # stored in UNICODE
+                    # Key that matches 'id' regex stored in UNICODE
                     match = re.match(self.regex, key, re.UNICODE)
 
                     all = True
@@ -168,12 +174,12 @@ class select(object):
 
                         # all
                         if self.all_predicates:
-                            idx = match.group(1)
+                            idx = match.groups()
                             all = reduce(operator.and_, [f(a_class, idx) for f in self.all_predicates])
 
                         # any
                         if self.any_predicates:
-                            idx = match.group(1)
+                            idx = match.group()
                             any = reduce(operator.or_, [f(a_class, idx) for f in self.any_predicates])
 
                         if all and any:
