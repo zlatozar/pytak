@@ -138,10 +138,10 @@ def project():
     args = parse_proj_options(parse_options(sys.argv))
 
     if args.name:
-        __copy("template", args.dest + args.name)
+        __copy("template", args.dest + '/' + args.name)
         print("Project '%s', was created in '%s'" % (args.name, args.dest))
     else:
-        raise AttributeError("Please specify PyTak project name. For more information type: pytak-run --help")
+        raise AttributeError("Please specify PyTak project name. For more information type: pytak-project --help")
 
     sys.exit(0)
 
